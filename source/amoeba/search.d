@@ -764,6 +764,10 @@ struct Search {
 		return master.rootMoves[0];
 	}
 
+	Moves allMoves() const @property {
+		return master.rootMoves;
+	}
+
 	/* get the opponent expected move */
 	Move hint() @property {
 		Entry h;
