@@ -1,0 +1,5 @@
+name "amoeba"
+description "A Chess Engine"
+authors "Shaw Summa"
+copyright "Copyright © 2022, Shaw Summa"
+license "GPL"

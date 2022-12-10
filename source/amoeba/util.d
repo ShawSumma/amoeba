@@ -4,7 +4,7 @@
  * © 2016-2021 Richard Delorme
  */
 
-module util;
+module amoeba.util;
 import std.array, std.conv, std.datetime, std.format, std.parallelism, std.process, std.stdio, std.string;
 import core.bitop, core.simd, core.time, core.thread, core.stdc.stdlib;
 

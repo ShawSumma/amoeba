@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module tt;
+module amoeba.tt;
 
-import board, move, util;
+import amoeba.board, amoeba.move, amoeba.util;
 import std.format;
 
 /* Hash table score bound */
@@ -141,7 +141,7 @@ struct TranspositionTable {
 	/* speed up further access */
 	void prefetch(const Key k) {
 		const size_t i = k.index(mask);
-		util.prefetch(cast (void*) &entry[i]);
+		amoeba.util.prefetch(cast (void*) &entry[i]);
 
 	}
 

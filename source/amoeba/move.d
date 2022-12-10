@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module move;
+module amoeba.move;
 
-import board, util;
+import amoeba.board, amoeba.util;
 import std.stdio, std.array, std.ascii, std.format,  std.math, std.string, std.algorithm;
 
 /*
@@ -188,7 +188,7 @@ private:
 				auto p = toPiece(board[m.from]);
 				auto victim = toPiece(board[m.to]);
 				i.value = cast (short) (vCapture[victim] + vPromotion[m.promotion] - vPiece[p] + center[m.to]);
-				if (i.value == -vPiece[Piece.pawn]) {
+				if (i.value == -cast(int) vPiece[Piece.pawn]) {
 					if (board.isEnpassant(m)) i.value += vCapture[Piece.pawn]; // en passant
 					else i.value = to7thRankBonus; // push to 7
 				}
@@ -227,7 +227,7 @@ private:
 					i.value = cast (short) (vCapture[victim] + vPromotion[i.move.promotion] - vPiece[p]);
 					if (board.see(i.move) < 0 && board.giveCheck(i.move) < 2) i.value += badSeeMalus;
 				} else {
-					i.value = cast (short) ((p == Piece.king) ? 1 : -vPiece[p]);
+					i.value = cast (short) ((p == Piece.king) ? 1 : -cast(int) vPiece[p]);
 				}
 			}
 		}

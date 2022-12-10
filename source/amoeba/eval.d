@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module eval;
+module amoeba.eval;
 
-import board, kpk, move, util, weight;
+import amoeba.board, amoeba.kpk, amoeba.move, amoeba.util, amoeba.weight;
 import std.algorithm, std.conv, std.math, std.stdio;
 
 
@@ -656,14 +656,14 @@ private:
 			// bad bishop
 			if ((KBPk[0] == s.materialIndex[0] && KBPk[1] == s.materialIndex[1])
 			 || (KBPk[1] == s.materialIndex[0] && KBPk[0] == s.materialIndex[1])) {
-				if (b.piece[Piece.pawn] & (board.File.A | board.File.H)) {
+				if (b.piece[Piece.pawn] & (amoeba.board.File.A | amoeba.board.File.H)) {
 					if ((b.whiteSquares & b.piece[Piece.bishop]) && ((promotable[0]|promotable[1]) & b.blackSquares)) return value / 16;
 					if ((b.blackSquares & b.piece[Piece.bishop]) && ((promotable[0]|promotable[1]) & b.whiteSquares)) return value / 16;
 				}
 			}
 
 
-			if (s.stage == 0) return kpk.rescale(b, value); // king vs king + pawn
+			if (s.stage == 0) return amoeba.kpk.rescale(b, value); // king vs king + pawn
 		}
 
 		// fifty-move rule

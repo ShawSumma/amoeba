@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module kpk;
+module amoeba.kpk;
 
-import board, eval, util;
+import amoeba.board, amoeba.eval, amoeba.util;
 import std.algorithm, std.stdio;
 
 private:

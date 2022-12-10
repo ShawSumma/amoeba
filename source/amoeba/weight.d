@@ -4,7 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-import eval;
+module amoeba.weight;
+
+import amoeba.eval;
 
 static immutable Eval.Weight initialWeights = {
 // Material

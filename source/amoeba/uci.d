@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module uci;
+module amoeba.uci;
 
-import board, eval, move, search, tt, util;
+import amoeba.board, amoeba.eval, amoeba.move, amoeba.search, amoeba.tt, amoeba.util;
 import std.algorithm, std.array, std.conv, std.concurrency, std.parallelism, std.stdio, std.string;
 import core.thread;
 
@@ -51,7 +51,7 @@ final class Uci {
 	Search search;
 	Board board;
 	Moves moves;
-	util.Message message;
+	amoeba.util.Message message;
 	Time [Color.size] time;
 	int forcedDepth = -1, depthMax, movesToGo, multipv;
 	double forcedTime = 0.0;
@@ -64,7 +64,7 @@ final class Uci {
 	/* constructor */
 	this(const bool dbg = false) {
 		name = "Amoeba " ~ versionNumber ~ '.' ~ arch;
-		message = new util.Message(name);
+		message = new amoeba.util.Message(name);
 		if (dbg) message.logOn();
 		board = new Board;
 		search = Search(hashSize.MBytes, 1, message);

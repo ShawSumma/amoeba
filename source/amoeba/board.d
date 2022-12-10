@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module board;
+module amoeba.board;
 
-import move, util, tt;
+import amoeba.move, amoeba.util, amoeba.tt;
 import std.algorithm, std.ascii, std.conv, std.format, std.getopt, std.math, std.random, std.range, std.stdio, std.string, std.uni;
 
 /*

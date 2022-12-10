@@ -3,9 +3,7 @@
  * © 2016-2021 Richard Delorme
  */
 
-module amoeba;
-
-import board, kpk, search, uci, util;
+import amoeba.board, amoeba.kpk, amoeba.search, amoeba.uci, amoeba.util;
 import std.conv, std.stdio;
 
 /* main function */
@@ -54,7 +52,7 @@ void main(string[] args) {
 	}
 
 	try {
-		kpk.init();
+		amoeba.kpk.init();
 		foreach (i, arg; args) {
 			if (arg == "--debug" || arg == "-g") dbg = true;
 			if (arg == "--depth" || arg == "-d") depth = to!int(args[i + 1]); // i < args.length ?
@@ -64,7 +62,7 @@ void main(string[] args) {
 			if (arg == "--affinity" || arg == "-a") affinity = args[i + 1];
 		}
 		if (args.length > 1) {
-			if (args[1] == "perft") board.perft(args[1 .. $], null);
+			if (args[1] == "perft") amoeba.board.perft(args[1 .. $], null);
 			else if (args[1] == "bench") {
 				Search s = Search(hashSize.MBytes, nThreads, null);
 				bench(args[1 .. $], s);

@@ -4,9 +4,9 @@
  * © 2016-2021 Richard Delorme
  */
 
-module search;
+module amoeba.search;
 
-import board, eval, kpk, move, tt, util;
+import amoeba.board, amoeba.eval, amoeba.kpk, amoeba.move, amoeba.tt, amoeba.util;
 import std.algorithm, std.concurrency, std.parallelism, std.conv, std.format, std.getopt, std.math, std.stdio, std.string, std.traits;
 import core.atomic, core.thread;
 
